@@ -120,7 +120,7 @@ void string_input::handle_events(){
                         //If we are a client.
                         else{
                             //If we are not connected to the server.
-                            if(!network.peer->GetConnectionState(network.SERVER_ID)){
+                            if(network.peer->GetConnectionState(network.SERVER_ID)!=IS_CONNECTED){
                                 //Connect to the server.
                                 network.peer->Connect(network.SERVER_IP.c_str(),network.SERVER_PORT,0,0);
                                 ss.clear();ss.str("");ss<<"Attempting to connect to ";ss<<network.SERVER_IP;ss<<":";ss<<network.SERVER_PORT;ss<<".";msg=ss.str();
