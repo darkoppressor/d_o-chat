@@ -2,6 +2,7 @@ syntax: glob
 bin
 obj
 .objs
-*.cfg
-*.depend
 D_OChat
+*.depend
+Thumbs.db
+*.cfg
