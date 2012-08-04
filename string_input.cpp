@@ -451,8 +451,8 @@ void string_input::handle_events(){
                     update_text_log("--------------------------------------------------------------------------------",2);
                     update_text_log("                                    D_O Chat                                    ",2);
                     update_text_log("                            Created by: Kevin Wells",2);
-                    update_text_log("                               Version: 1.0 Beta",2);
-                    update_text_log("                            Built on: May 24, 2011",2);
+                    update_text_log("                               Version: 1.1 Beta",2);
+                    update_text_log("                            Built on: Aug 4, 2012",2);
                     update_text_log("--------------------------------------------------------------------------------",2);
                 }
 

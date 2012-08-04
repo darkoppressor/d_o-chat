@@ -14,7 +14,8 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-fexpensive-optimizations" />
-					<Add option="-O3" />
+					<Add option="-O2" />
+					<Add option="-w" />
 					<Add directory="..\..\MinGW\include" />
 					<Add directory="..\..\SDL\include\SDL" />
 					<Add directory="..\..\SDL\SDL_image\include" />
@@ -31,13 +32,14 @@
 					<Add option="-lSDL" />
 					<Add option="-mwindows" />
 					<Add option="-lwinmm" />
+					<Add option="-Wl,--stack=67108864" />
 					<Add library="..\..\SDL\lib\libSDL.dll.a" />
 					<Add library="..\..\SDL\lib\libSDLmain.a" />
 					<Add library="..\..\glew\lib\glew32s.lib" />
 					<Add library="..\..\MinGW\lib\libopengl32.a" />
 					<Add library="..\..\MinGW\lib\libglu32.a" />
 					<Add library="..\..\SDL\SDL_image\lib\SDL_image.lib" />
-					<Add library="..\..\SDL\SDL_gfx\lib\libSDL_gfx.dll.a" />
+					<Add library="..\..\SDL\SDL_gfx\lib\libSDL_gfx.a" />
 					<Add library="..\..\SDL\SDL_mixer\lib\SDL_mixer.lib" />
 					<Add directory="..\..\SDL\lib" />
 					<Add directory="..\..\glew\lib" />
@@ -47,36 +49,6 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
-		<Unit filename="MersenneTwister.h" />
-		<Unit filename="client.cpp" />
-		<Unit filename="client.h" />
-		<Unit filename="client_data.h" />
-		<Unit filename="enumerations.h" />
-		<Unit filename="font.cpp" />
-		<Unit filename="font.h" />
-		<Unit filename="game_window.cpp" />
-		<Unit filename="game_window.h" />
-		<Unit filename="image.cpp" />
-		<Unit filename="image.h" />
-		<Unit filename="image_data.h" />
-		<Unit filename="main.cpp" />
-		<Unit filename="main.h" />
-		<Unit filename="network.cpp" />
-		<Unit filename="network.h" />
-		<Unit filename="pixels.cpp" />
-		<Unit filename="pixels.h" />
-		<Unit filename="quit.cpp" />
-		<Unit filename="quit.h" />
-		<Unit filename="random_number_generator.cpp" />
-		<Unit filename="random_number_generator.h" />
-		<Unit filename="render.cpp" />
-		<Unit filename="render.h" />
-		<Unit filename="string_input.cpp" />
-		<Unit filename="string_input.h" />
-		<Unit filename="timer.cpp" />
-		<Unit filename="timer.h" />
-		<Unit filename="world.cpp" />
-		<Unit filename="world.h" />
 		<Unit filename="..\..\RakNet\Raknet\Source\AutopatcherPatchContext.h" />
 		<Unit filename="..\..\RakNet\Raknet\Source\AutopatcherRepositoryInterface.h" />
 		<Unit filename="..\..\RakNet\Raknet\Source\BitStream.cpp" />
@@ -266,9 +238,12 @@
 		<Unit filename="..\..\RakNet\Raknet\Source\SimpleMutex.h" />
 		<Unit filename="..\..\RakNet\Raknet\Source\SimpleTCPServer.h" />
 		<Unit filename="..\..\RakNet\Raknet\Source\SingleProducerConsumer.h" />
+		<Unit filename="..\..\RakNet\Raknet\Source\SocketDefines.h" />
 		<Unit filename="..\..\RakNet\Raknet\Source\SocketIncludes.h" />
 		<Unit filename="..\..\RakNet\Raknet\Source\SocketLayer.cpp" />
 		<Unit filename="..\..\RakNet\Raknet\Source\SocketLayer.h" />
+		<Unit filename="..\..\RakNet\Raknet\Source\StatisticsHistory.cpp" />
+		<Unit filename="..\..\RakNet\Raknet\Source\StatisticsHistory.h" />
 		<Unit filename="..\..\RakNet\Raknet\Source\StringCompressor.cpp" />
 		<Unit filename="..\..\RakNet\Raknet\Source\StringCompressor.h" />
 		<Unit filename="..\..\RakNet\Raknet\Source\StringTable.cpp" />
@@ -281,6 +256,8 @@
 		<Unit filename="..\..\RakNet\Raknet\Source\TableSerializer.h" />
 		<Unit filename="..\..\RakNet\Raknet\Source\TeamBalancer.cpp" />
 		<Unit filename="..\..\RakNet\Raknet\Source\TeamBalancer.h" />
+		<Unit filename="..\..\RakNet\Raknet\Source\TeamManager.cpp" />
+		<Unit filename="..\..\RakNet\Raknet\Source\TeamManager.h" />
 		<Unit filename="..\..\RakNet\Raknet\Source\TelnetTransport.cpp" />
 		<Unit filename="..\..\RakNet\Raknet\Source\TelnetTransport.h" />
 		<Unit filename="..\..\RakNet\Raknet\Source\ThreadPool.h" />
@@ -304,6 +281,8 @@
 		<Unit filename="..\..\RakNet\Raknet\Source\VariableListDeltaTracker.h" />
 		<Unit filename="..\..\RakNet\Raknet\Source\VariadicSQLParser.cpp" />
 		<Unit filename="..\..\RakNet\Raknet\Source\VariadicSQLParser.h" />
+		<Unit filename="..\..\RakNet\Raknet\Source\VitaIncludes.cpp" />
+		<Unit filename="..\..\RakNet\Raknet\Source\VitaIncludes.h" />
 		<Unit filename="..\..\RakNet\Raknet\Source\WSAStartupSingleton.cpp" />
 		<Unit filename="..\..\RakNet\Raknet\Source\WSAStartupSingleton.h" />
 		<Unit filename="..\..\RakNet\Raknet\Source\WindowsIncludes.h" />
@@ -315,6 +294,36 @@
 		<Unit filename="..\..\RakNet\Raknet\Source\rdlmalloc-options.h" />
 		<Unit filename="..\..\RakNet\Raknet\Source\rdlmalloc.cpp" />
 		<Unit filename="..\..\RakNet\Raknet\Source\rdlmalloc.h" />
+		<Unit filename="MersenneTwister.h" />
+		<Unit filename="client.cpp" />
+		<Unit filename="client.h" />
+		<Unit filename="client_data.h" />
+		<Unit filename="enumerations.h" />
+		<Unit filename="font.cpp" />
+		<Unit filename="font.h" />
+		<Unit filename="game_window.cpp" />
+		<Unit filename="game_window.h" />
+		<Unit filename="image.cpp" />
+		<Unit filename="image.h" />
+		<Unit filename="image_data.h" />
+		<Unit filename="main.cpp" />
+		<Unit filename="main.h" />
+		<Unit filename="network.cpp" />
+		<Unit filename="network.h" />
+		<Unit filename="pixels.cpp" />
+		<Unit filename="pixels.h" />
+		<Unit filename="quit.cpp" />
+		<Unit filename="quit.h" />
+		<Unit filename="random_number_generator.cpp" />
+		<Unit filename="random_number_generator.h" />
+		<Unit filename="render.cpp" />
+		<Unit filename="render.h" />
+		<Unit filename="string_input.cpp" />
+		<Unit filename="string_input.h" />
+		<Unit filename="timer.cpp" />
+		<Unit filename="timer.h" />
+		<Unit filename="world.cpp" />
+		<Unit filename="world.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />
