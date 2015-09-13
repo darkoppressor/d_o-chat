@@ -1,5 +1,6 @@
 # d_o-chat
 Chat like it's 1977!
+http://cheeseandbacon.org/
 
 A simple networked chat program. Works over a LAN, the internet, etc.
 I made this program to learn how to program networking stuff. It uses [RakNet](https://github.com/OculusVR/RakNet), which is awesome, by the way.
